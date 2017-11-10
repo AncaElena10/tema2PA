@@ -1,0 +1,43 @@
+TEMA 2 PA
+Moisa Anca-Elena
+321 CA
+
+KimLandia
+
+Pentru implementare am folosit algoritmul Kruskal, dupa pseudocod-ul din 
+laborator. Initial, se considera ca fiecare nod din graf este un arbore 
+(functia makeSet). Apoi la fiecare pas se selecteaza muchia de cost minim 
+care uneste cei doi arbori disjuncti, si se realizeaza uniunea a celor 2 
+arbori(functia Union). In final, muchia respectiva se adauga la multimea 
+de muchiiAMA. Apelez functia kruskal cu parametrii (g, null, 0). In functia 
+kruskal, daca muchia primita are valoarea null,atunci algoritmul poate decurge 
+normal, altfel inseamna ca intervine partea a doua din problema.
+Pentru partea a doua din problema, am extras muchia cu indicele primit, i-am 
+setat costul ca fiind MIN_VALUE, si am trimis-o in functia kruskal. Astfel, 
+dupa sortare, muchia se va afla pe prima pozitie, si poate fi considerata 
+muchia de rezerva. Tot dupa sortare, ii schimb costul din 0 in costul pe care il 
+avea initial.
+Pe langa algoritmul kruskal din Main, am bagat si o clasa Edge care retine 
+componentele din care este compus graful, mai exact primul nod, al doilea nod si 
+costul muchiei formate de cele doua noduri. Am implementat si unele functii 
+ajutatoare precum getCost(), getFirstNode(), getSecondNode(), compare care sorteaza 
+muchiile in functie de cost.
+In Graph am facut citirea datelor din fisier si unele functii care m-ar putea 
+ajuta la implementare.
+
+Portal
+
+Pentru implementare am folosit algoritmul DFS iterativ. Acesta porneste din 
+fiecare nod frunza. Initial, daca frunzele nu au fost vizitate, le bag intr-o stiva 
+si le setez ca vizitate. Cat timp mai sunt elemente in stiva, extrag un nod. Ii 
+iau vecinii pe rand. Daca vecinul nu a mai fost vizitat, si este diferit de 
+parintele nodului curent, atunci rezulta ca am un ciclu. Altfel, daca nu a mai 
+fost vizitat, il fac vizitat, ii setez parintele si il bag in stiva. Nodurile 
+izolate cresc in momentul in care nu am gasit un ciclu. Numarul final de 
+noduri este compus din aceste noduri izolate in cazul in care nu exista un ciclu 
+si nodurile singure(care nu au niciun vecin).
+In main am extras in arrayFrunze frunzele grafului(nodurile cu un singur vecin).
+In Graph am facut citirea din fisier si am implementat unele functii auxiliare 
+ajutatoare. Graful meu este sub forma de lista de adiacenta, astfel am facut 
+functie de adaugare a muchiei, functie de returnare a vecinilor unui nod, si o 
+functie care returneaza true daca un nod nu are vecini.
